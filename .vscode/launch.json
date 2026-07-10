@@ -1,0 +1,61 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "AxisDTL: routed",
+      "type": "lldb",
+      "request": "launch",
+      "cargo": {
+        "args": ["build", "--bin", "axis_dtl"],
+        "filter": {
+          "name": "axis_dtl",
+          "kind": "bin"
+        }
+      },
+      "args": ["routed"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "AxisDTL: auction",
+      "type": "lldb",
+      "request": "launch",
+      "cargo": {
+        "args": ["build", "--bin", "axis_dtl"],
+        "filter": {
+          "name": "axis_dtl",
+          "kind": "bin"
+        }
+      },
+      "args": ["auction"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "AxisDTL: batch",
+      "type": "lldb",
+      "request": "launch",
+      "cargo": {
+        "args": ["build", "--bin", "axis_dtl"],
+        "filter": {
+          "name": "axis_dtl",
+          "kind": "bin"
+        }
+      },
+      "args": ["batch"],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "AxisDTL: snapshot",
+      "type": "lldb",
+      "request": "launch",
+      "cargo": {
+        "args": ["build", "--bin", "axis_dtl"],
+        "filter": {
+          "name": "axis_dtl",
+          "kind": "bin"
+        }
+      },
+      "args": ["snapshot"],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
