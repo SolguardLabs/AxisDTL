@@ -5,6 +5,8 @@ on:
         branches:
             - main
             - master
+            - production
+            - "agent/**"
     pull_request:
     workflow_dispatch:
 
