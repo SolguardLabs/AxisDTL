@@ -11,14 +11,11 @@ if ! command -v cargo >/dev/null 2>&1 && [[ -d "${HOME:-}/.cargo/bin" ]]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-cargo test --locked
-if command -v node >/dev/null 2>&1 && node --version >/dev/null 2>&1; then
-  NODE_BIN="node"
-elif command -v node.exe >/dev/null 2>&1 && node.exe --version >/dev/null 2>&1; then
-  NODE_BIN="node.exe"
-else
-  echo "node executable not found" >&2
-  exit 127
+BUN_BIN="$(command -v bun || command -v bun.exe || true)"
+if [[ -z "$BUN_BIN" ]]; then
+  echo "Bun is required but was not found in PATH" >&2
+  exit 1
 fi
 
-"$NODE_BIN" --test tests/node/*.test.js
+cargo test --locked
+"$BUN_BIN" test --timeout 30000 ./tests/node ./sdk ./scripts
