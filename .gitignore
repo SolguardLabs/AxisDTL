@@ -1,4 +1,4 @@
 node_modules/
 target/
 dist/
-vulnerability.md
+/tests/axis_decimal_proof.rs

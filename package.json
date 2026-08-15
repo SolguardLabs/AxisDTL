@@ -1,21 +1,21 @@
 {
     "name": "axis-dtl",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "private": true,
     "type": "module",
     "scripts": {
-        "test": "bun test --timeout 30000 ./tests/node",
+        "test": "bun test --timeout 30000 ./tests/node ./sdk ./scripts",
         "test:rust": "cargo test --locked",
-        "test:all": "cargo test --locked && bun test --timeout 30000 ./tests/node",
-        "ci": "bun install --frozen-lockfile && cargo fmt --all -- --check && cargo build --all-targets --locked && cargo test --locked && cargo clippy --all-targets --all-features --locked -- -D warnings && bun run fmt:check && bun run build && bun test --timeout 30000 ./tests/node",
+        "test:all": "cargo test --locked && bun test --timeout 30000 ./tests/node ./sdk ./scripts",
+        "ci": "bash scripts/ci.sh",
         "build": "bun scripts/check-js.mjs",
-        "fmt": "prettier --write --config .prettierrc --ignore-path .prettierignore \"tests/**/*.js\"",
-        "fmt:check": "prettier --check --config .prettierrc --ignore-path .prettierignore \"tests/**/*.js\""
+        "fmt": "prettier --write --config .prettierrc --ignore-path .prettierignore \"**/*.{js,json,md,mjs,yml}\"",
+        "fmt:check": "prettier --check --config .prettierrc --ignore-path .prettierignore \"**/*.{js,json,md,mjs,yml}\""
     },
     "devDependencies": {
-        "prettier": "^3.8.3"
+        "prettier": "3.9.4"
     },
     "engines": {
-        "bun": ">=1.3.0"
+        "bun": "1.3.14"
     }
 }

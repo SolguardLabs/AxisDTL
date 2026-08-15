@@ -1,5 +1,7 @@
 bun.lock
 node_modules/
+target/
 *.tsbuildinfo
 dist/
 package-lock.json
+tests/axis_decimal_proof.rs
