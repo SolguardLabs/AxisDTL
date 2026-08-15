@@ -13,7 +13,7 @@
         "fmt:check": "prettier --check --config .prettierrc --ignore-path .prettierignore \"**/*.{js,json,md,mjs,yml}\""
     },
     "devDependencies": {
-        "prettier": "3.9.4"
+        "prettier": "3.9.6"
     },
     "engines": {
         "bun": "1.3.14"
